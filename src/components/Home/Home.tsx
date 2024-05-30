@@ -1,33 +1,50 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { FaPause, FaPlay } from 'react-icons/fa'
 import { RiArrowDownWideFill } from 'react-icons/ri'
 import sound from '../../assets/capibara.mp3'
 import s from './Home.module.scss'
-
 export const Home = () => {
+  const [playing, setPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement>(null)
 
-  const onplay = () => audioRef?.current?.play()
+  const toggleMusic = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation()
+    if (!audioRef.current) return
+
+    if (playing) {
+      audioRef.current.pause()
+      setPlaying(false)
+    } else {
+      audioRef.current.play()
+      setPlaying(true)
+    }
+  }
 
   useEffect(() => {
-    const audioElement = audioRef.current
-
-    if (!audioElement) return
-
-    audioElement.src = sound
-    audioElement.muted = false
-
-    audioElement.play()
+    audioRef.current?.play()
   }, [])
 
   return (
-    <div className={s.home}>
-      <audio ref={audioRef} loop>
-        123
-      </audio>
+    <div
+      className={s.home}
+      onClick={() => {
+        setPlaying(true)
+        audioRef.current?.play()
+      }}
+    >
+      <audio ref={audioRef} src={sound} loop autoPlay></audio>
       <div className={s.content}>
+        <div className={s.playButton} onClick={toggleMusic}>
+          <button>{playing ? <FaPause /> : <FaPlay />}</button>
+          <div>
+            {'чтобы выключить музыку нажмите '.split('').map((el, index) => (
+              <span className={`char${index + 1}`}>{el}</span>
+            ))}
+          </div>
+        </div>
         <h1>Амантай - Мээрим</h1>
         <p>24/08/2024</p>
-        <button onClick={onplay}>
+        <button className={s.scrollDown}>
           <RiArrowDownWideFill />
         </button>
       </div>
