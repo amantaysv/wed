@@ -1,10 +1,11 @@
+import { DearGuests } from './components/DearGuests/DearGuests'
 import { Home } from './components/Home/Home'
 
 const App = () => {
   return (
     <>
       <Home />
-      asd
+      <DearGuests />
     </>
   )
 }

@@ -25,3 +25,9 @@ body {
   min-height: 100vh;
   @include rotated-text();
 }
+
+i {
+  font-family: 'Good Vibes Pro';
+  font-weight: 400;
+  font-style: normal;
+}

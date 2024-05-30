@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { FaPause, FaPlay } from 'react-icons/fa'
 import { RiArrowDownWideFill } from 'react-icons/ri'
-import sound from '../../assets/capibara.mp3'
+import sound from '../../assets/perdo.mp3'
 import s from './Home.module.scss'
 export const Home = () => {
   const [playing, setPlaying] = useState(false)
@@ -21,7 +21,7 @@ export const Home = () => {
   }
 
   useEffect(() => {
-    audioRef.current?.play()
+    // audioRef.current?.play()
   }, [])
 
   return (
@@ -42,8 +42,12 @@ export const Home = () => {
             ))}
           </div>
         </div>
-        <h1>Амантай - Мээрим</h1>
-        <p>24/08/2024</p>
+        <h1>
+          <i>Амантай - Мээрим</i>
+        </h1>
+        <p>
+          <i>24/08/2024</i>
+        </p>
         <button className={s.scrollDown}>
           <RiArrowDownWideFill />
         </button>
