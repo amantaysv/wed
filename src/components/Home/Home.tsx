@@ -15,9 +15,13 @@ export const Home = () => {
       audioRef.current.pause()
       setPlaying(false)
     } else {
-      audioRef.current.play()
-      setPlaying(true)
+      handlePlay()
     }
+  }
+
+  const handlePlay = () => {
+    setPlaying(true)
+    audioRef.current?.play()
   }
 
   useEffect(() => {
@@ -25,13 +29,7 @@ export const Home = () => {
   }, [])
 
   return (
-    <div
-      className={s.home}
-      onClick={() => {
-        setPlaying(true)
-        audioRef.current?.play()
-      }}
-    >
+    <div className={s.home} onClick={handlePlay} onTouchMove={handlePlay}>
       <audio ref={audioRef} src={sound} loop autoPlay></audio>
       <div className={s.content}>
         <div className={s.playButton} onClick={toggleMusic}>
