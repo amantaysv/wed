@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { FaPause, FaPlay } from 'react-icons/fa'
 import { RiArrowDownWideFill } from 'react-icons/ri'
-import sound from '../../assets/pedro.mp3'
+import sound from '../../assets/indila.mp3'
 import s from './Home.module.scss'
 export const Home = () => {
   const [playing, setPlaying] = useState(false)
