@@ -9,21 +9,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@mixin rotated-text($num-letters: 31, $angle-span: 360deg, $angle-offset: -40deg) {
-  $angle-per-char: $angle-span / $num-letters;
-
-  @for $i from 1 through $num-letters {
-    .char#{$i} {
-      rotate: ($angle-offset + $angle-per-char * $i);
-    }
-  }
-}
-
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  @include rotated-text();
 }
 
 h1,
