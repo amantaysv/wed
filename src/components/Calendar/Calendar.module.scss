@@ -1,0 +1,78 @@
+.root {
+  padding: 60px 20px;
+  font-family: 'Monterchi Serif';
+
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 32px;
+  }
+
+  .week,
+  .time {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #000;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  .date {
+    font-size: 1.8em;
+  }
+
+  .calendar {
+    display: flex;
+    flex-wrap: wrap;
+    text-transform: uppercase;
+
+    &Date {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 22px;
+      span {
+        margin-right: 16px;
+      }
+    }
+
+    &WeekDays {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      aspect-ratio: 4 / 3;
+      text-align: center;
+      flex: 0 0 14.2857%;
+    }
+
+    .heartIcon {
+      font-size: 40px;
+      display: flex;
+      position: absolute;
+    }
+  }
+}
