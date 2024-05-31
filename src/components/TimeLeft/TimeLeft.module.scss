@@ -1,7 +1,7 @@
 .root {
   position: relative;
   height: 100dvh;
-  background: url(../../assets/images/timeleft.jpg);
+  background: url(../../assets/images/timeleft.jpg) center / cover no-repeat;
 
   &::before {
     content: '';
