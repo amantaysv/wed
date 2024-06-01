@@ -15,7 +15,7 @@ export const Calendar = () => {
           <p>08</p>
           <p>24</p>
         </div>
-        <div className={s.time}>18:00</div>
+        <div className={s.time}>17:00</div>
       </div>
 
       <div className={s.calendarDate}>
